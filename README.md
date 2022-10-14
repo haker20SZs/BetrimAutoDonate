@@ -12,7 +12,7 @@ BetrimAutoDonate - Скрипт авто доната для ваших серв
 Фото BetrimAutoDonate - скрипт авто доната
 -------------
 
-![image](https://user-images.githubusercontent.com/79506370/195771221-1e44dcbd-5fb0-4633-8c73-7f6cc955739d.png)
+![image](https://user-images.githubusercontent.com/79506370/195773360-d6461c49-aa14-48d9-a2a8-a3a71d8f9066.png)
 
 -------------
 
