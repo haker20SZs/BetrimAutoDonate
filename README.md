@@ -29,6 +29,6 @@ BetrimAutoDonate - Скрипт авто доната для ваших серв
 
 Мой вк:                                                                                                     
  Vk - @tiktoker_ru
- 
-Мой собственный проект:
- MilordPE - @milordpe
+  
+Мой собственный проект:                                           
+ MilordPE - @milordpe                                              
