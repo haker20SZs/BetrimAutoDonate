@@ -31,11 +31,12 @@ $keyref = "4862"; // реферальный ключ на скидку - https:/
 $discount = "10"; // -15руб скидка в размере суммы
 //WEB - Settings//
 
-//FreeKassa//AnyPay//
-$systempay = "FreeKassa.php";
+
+//FreeKassa//AnyPay//Payeer//
+$systempay = "Payeer.php";
 $key = "Ключ от платежной системы";
 $id = "ID от платежной системы";
-//FreeKassa//AnyPay//
+//FreeKassa//AnyPay//Payeer//
 
 //Ссылка на успешную оплату для выдачи доната
 //https://{Ваш домен}/config/donate.php?secret_word={Текст из строки secret_word}
