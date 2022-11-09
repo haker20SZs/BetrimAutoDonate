@@ -5,9 +5,9 @@ echo "<script> document.oncontextmenu = cmenu; function cmenu() { return false; 
 include '../config.php';
 
 if(isset($_GET["secret_word"])){
-if($_GET["secret_word"] == $secret_word){
+  if($_GET["secret_word"] == $secret_word){
 	
-	$conn = new mysqli($mysqlhost,$mysqllogin,$mysqlpass,$mysqlbd);
+	$conn = new mysqli($mysqlhost, $mysqllogin, $mysqlpass, $mysqlbd);
 	$sqlnickname = "SELECT * FROM nickname";
 	if($result = $conn->query($sqlnickname)){
     foreach($result as $row){$nickname = $row["nickname"];}}
@@ -19,6 +19,10 @@ if($_GET["secret_word"] == $secret_word){
 	$sqlcaseid = "SELECT * FROM caseid";
 	if($result = $conn->query($sqlcaseid)){
     foreach($result as $row){$caseid = $row["caseid"];}}
+
+  $sqlmoneyamount = "SELECT * FROM moneyamount";
+  if($result = $conn->query($sqlmoneyamount)){
+    foreach($result as $row){$moneyamount = $row["moneyamount"];}}
 	
 	$rand = mt_rand(100,1000);
 	$token = $user_token_vk;
@@ -170,7 +174,7 @@ p, ul, ol {
 	$headers .= "From: <".$from.">\r\n";
 	
 	if(mail($to,$subject,$message,$headers));
-	header("Location: /rcon/?cmd={$cmdcase} {$nickname} {$caseid}&cmd2={$cmddonate} {$nickname} {$donatename}&bd={$caseid}");
+	header("Location: /rcon/?cmd={$cmdcase} {$nickname} {$caseid}&cmd2={$cmddonate} {$nickname} {$donatename}&cmd3={$cmdmoney} {$nickname} {$moneyamount}&bd={$caseid}");
 }else{
     header("Location: /");	
 }

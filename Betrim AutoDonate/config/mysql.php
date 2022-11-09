@@ -23,7 +23,7 @@ if($result = $conn->query($sql)){
     }
 }
 
-if(isset($_GET["nickname"],$_GET["donatename"],$_GET["donatesuma"],$_GET["casename"],$_GET["casesuma"],$_GET["caseid"],$_GET["lastname"],$_GET["refkey"])){
+if(isset($_GET["nickname"], $_GET["donatename"], $_GET["donatesuma"], $_GET["casename"], $_GET["casesuma"], $_GET["caseid"], $_GET["moneyname"], $_GET["moneyamount"], $_GET["moneysuma"], $_GET["lastname"], $_GET["refkey"])){
 
 if($_GET["nickname"]){
   $nickname = $_GET["nickname"];
@@ -67,27 +67,46 @@ if($_GET["lastname"]){
   $lastname = null;
 }
 
+if($_GET["moneyamount"]){
+  $moneyamount = $_GET["moneyamount"];
+}else{
+  $moneyamount = null;
+}
+
+if($_GET["moneyname"]){
+  $moneyname = $_GET["moneyname"];
+}else{
+  $moneyname = null;
+}
+
+if($_GET["moneysuma"]){
+  $moneysuma = $_GET["moneysuma"];
+}else{
+  $moneysuma = null;
+}
+
 if($_GET["refkey"]){
   $refkey = $_GET["refkey"];
 }else{
   $refkey = null;
 }
 
-$sql = "UPDATE `lastshop` SET `lastshop` = (SELECT '{$lastname}'); UPDATE `nickname` SET `nickname` = (SELECT '{$nickname}'); UPDATE `donatename` SET `donatename` = (SELECT '{$donatename}'); UPDATE `donatesuma` SET `donatesuma` = (SELECT '{$donatesuma}'); UPDATE `casesuma` SET `casesuma` = (SELECT '{$casesuma}'); UPDATE `casename` SET `casename` = (SELECT '{$casename}'); UPDATE `caseid` SET `caseid` = (SELECT '{$caseid}');";
+$sql = "UPDATE `lastshop` SET `lastshop` = (SELECT '{$lastname}'); UPDATE `nickname` SET `nickname` = (SELECT '{$nickname}'); UPDATE `donatename` SET `donatename` = (SELECT '{$donatename}'); UPDATE `donatesuma` SET `donatesuma` = (SELECT '{$donatesuma}'); UPDATE `casesuma` SET `casesuma` = (SELECT '{$casesuma}'); UPDATE `casename` SET `casename` = (SELECT '{$casename}'); UPDATE `caseid` SET `caseid` = (SELECT '{$caseid}'); UPDATE `moneysuma` SET `moneysuma` = (SELECT '{$moneysuma}'); UPDATE `moneyamount` SET `moneyamount` = (SELECT '{$moneyamount}'); UPDATE `moneyname` SET `moneyname` = (SELECT '{$moneyname}');";
 }
 
 if($conn->multi_query($sql) === TRUE){
    echo "Yes";
-        } else {
+  } else {
    echo "Ошибка: " . $sql . "<br>" . $conn->error;
 }
 
 if($refkey == $keyref){
     include '../payments/'. $systempay;
-        }else{
+  }else{
     include '../payments/'. $systempay;
 }
 
 // Закрыть подключение
 $conn->close();
+
 ?>

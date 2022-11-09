@@ -3,6 +3,7 @@
 //Command - Settings//
 $cmddonate = "setgroup"; // Команда выдачи доната
 $cmdcase = "dc add"; // Команда выдачи донат кейса
+$cmdmoney = "addmoney"; // Команда выдачи монет
 //Command - Settings//
 
 //Rcon - Settings//
@@ -19,7 +20,7 @@ $mysqlbd = "root"; // Названия базы данных
 //Mysql - Settings//
 
 //WEB - Settings//
-$email = "ваш email";//null
+$email = "Ваш email";//null
 $botemail = "bot@milord-pe.ru";//null
 $namesite = "BetrimAutoDonate";
 $urlsite = "http://autodonate";

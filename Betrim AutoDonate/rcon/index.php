@@ -40,6 +40,20 @@ if(!isset($_GET["cmd2"])){
   }
 }
 
+if(!isset($_GET["cmd3"])){
+  $response['status'] = 'error';
+  $response['error'] = 'Empty command';
+}else{
+  if ($rcon->connect()){
+    $rcon->send_command($_GET['cmd3']);
+    $response['status'] = 'success';
+    $response['command'] = $_GET['cmd3'];
+  }else{
+    $response['status'] = 'error';
+    $response['error'] = 'RCON connection error';
+  }
+}
+
 $servername = $mysqlhost; // локалхост
 $username = $mysqllogin; // имя пользователя
 $password = $mysqlpass; // пароль если существует
@@ -59,8 +73,11 @@ if(isset($_GET["bd"])){
 	$casesuma = "BetrimAutoDonate";
 	$casename = "BetrimAutoDonate";
 	$caseid = "BetrimAutoDonate";
+  $moneyname = "BetrimAutoDonate";
+  $moneyamount = "BetrimAutoDonate";
+  $moneysuma = "BetrimAutoDonate";
 
-$sql = "UPDATE `nickname` SET `nickname` = (SELECT '{$nickname}'); UPDATE `donatename` SET `donatename` = (SELECT '{$donatename}'); UPDATE `donatesuma` SET `donatesuma` = (SELECT '{$donatesuma}'); UPDATE `casesuma` SET `casesuma` = (SELECT '{$casesuma}'); UPDATE `casename` SET `casename` = (SELECT '{$casename}'); UPDATE `caseid` SET `caseid` = (SELECT '{$caseid}');";
+$sql = "UPDATE `nickname` SET `nickname` = (SELECT '{$nickname}'); UPDATE `donatename` SET `donatename` = (SELECT '{$donatename}'); UPDATE `donatesuma` SET `donatesuma` = (SELECT '{$donatesuma}'); UPDATE `casesuma` SET `casesuma` = (SELECT '{$casesuma}'); UPDATE `casename` SET `casename` = (SELECT '{$casename}'); UPDATE `caseid` SET `caseid` = (SELECT '{$caseid}'); UPDATE `moneysuma` SET `moneysuma` = (SELECT '{$moneysuma}'); UPDATE `moneyamount` SET `moneyamount` = (SELECT '{$moneyamount}'); UPDATE `moneyname` SET `moneyname` = (SELECT '{$moneyname}');";
 }
 
 if($conn->multi_query($sql) === TRUE){
