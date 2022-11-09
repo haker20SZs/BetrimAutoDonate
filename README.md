@@ -12,6 +12,8 @@ BetrimAutoDonate - Скрипт авто доната для ваших серв
 
 ![image](https://user-images.githubusercontent.com/79506370/200796584-9bb43424-a36a-4389-addb-1ce381ed4ba3.png)
 
+-------------
+
 ![image](https://user-images.githubusercontent.com/79506370/200796659-b77ee193-02b6-4acb-b5fe-30150665e070.png)
 
 -------------
