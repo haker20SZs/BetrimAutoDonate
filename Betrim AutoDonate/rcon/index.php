@@ -1,8 +1,11 @@
 <?php
+
 header('Content-type: application/json');
+require '../config.php';
+
+if($_GET["key"] == $secret_word){
 
 require 'rcon.php';
-require '../config.php';
 
 $host = $rconHost;
 $port = $rconPort;
@@ -85,6 +88,10 @@ if($conn->multi_query($sql) === TRUE){
    header("Location: /");
    } else {
    echo "Ошибка: " . $sql . "<br>" . $conn->error;
+}
+
+}else{
+  echo("Error");
 }
 
 ?>

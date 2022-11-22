@@ -174,7 +174,7 @@ p, ul, ol {
 	$headers .= "From: <".$from.">\r\n";
 	
 	if(mail($to,$subject,$message,$headers));
-	header("Location: /rcon/?cmd={$cmdcase} {$nickname} {$caseid}&cmd2={$cmddonate} {$nickname} {$donatename}&cmd3={$cmdmoney} {$nickname} {$moneyamount}&bd={$caseid}");
+	header("Location: /rcon/?cmd={$cmdcase} {$nickname} {$caseid}&cmd2={$cmddonate} {$nickname} {$donatename}&cmd3={$cmdmoney} {$nickname} {$moneyamount}&bd={$caseid}&key={$secret_word}");
 }else{
     header("Location: /");	
 }
