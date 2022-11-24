@@ -32,7 +32,7 @@ $sys_products = json_decode($pay, true)["response"];
             <div class="container z-2" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
                 <div class="row align-items-center">
                     <div class="text-center col-lg-6 text-lg-left wow fadeInLeftBig" style="visibility: visible; animation-name: fadeInLeftBig;">
-                        <a href="https://milord-pe.ru/" class="shop-title"><?php echo($name); ?></a>
+                        <a href="<?php echo($urlweb); ?>" class="shop-title"><?php echo($name); ?></a>
 						<p class="shop-description text-muted"><br>Все средства направлены<br>На развитие проекта</p>
                         <div class="row align-items-center">
                             <div class="col-lg-6 order-lg-1">
