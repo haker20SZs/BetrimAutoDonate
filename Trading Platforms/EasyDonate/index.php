@@ -28,7 +28,7 @@ $sys_products = json_decode($pay, true)["response"];
 </head>
 <body>
     <main class="h-100">
-        <section id="home-slider" class="h-100 p-0 section section-xl section-image overlay-dark text-white jarallax" id="welcome-section" style="background: none 0% 0% / cover no-repeat; z-index: 0; background: url('/error/img/bg.png') no-repeat; background-size: cover;">
+        <section id="home-slider" class="h-100 p-0 section section-xl section-image overlay-dark text-white jarallax" id="welcome-section" style="background: none 0% 0% / cover no-repeat; z-index: 0; background: url('/images/bg/bg.png') no-repeat; background-size: cover;">
             <div class="container z-2" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
                 <div class="row align-items-center">
                     <div class="text-center col-lg-6 text-lg-left wow fadeInLeftBig" style="visibility: visible; animation-name: fadeInLeftBig;">
@@ -87,7 +87,7 @@ $sys_products = json_decode($pay, true)["response"];
                 </div>
             </div>
             <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;">
-                <div style="background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; background-image: url('/error/img/bg.png'); margin-top: 0px; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;"></div>
+                <div style="background-position: 50% 50%; background-size: cover; background-repeat: no-repeat; background-image: url('/images/bg/bg.png'); margin-top: 0px; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;"></div>
             </div>
 			<div id="section" style="left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100;"></div>
         </section>
