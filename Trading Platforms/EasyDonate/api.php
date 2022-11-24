@@ -20,7 +20,7 @@ $get = array(
 	'email' => $email,
 	'coupon' => $_GET["ref"],
 	'products' => '{"' . $sys_products . '":1}',
-	'success_url' => $_GET["success_url"]
+	'success_url' => $urlweb
 );
 
 $get = curl_init('https://easydonate.ru/api/v3/shop/payment/create?' . http_build_query($get));
