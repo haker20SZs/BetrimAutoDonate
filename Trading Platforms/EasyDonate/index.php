@@ -20,7 +20,7 @@ $sys_products = json_decode($pay, true)["response"];
     <meta name="copyright" lang="eng">
     <meta http-equiv="X-UA-Compatible" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="/error/img/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
 	<link href="/css/main.css" rel="stylesheet">
 	<script> document.oncontextmenu = cmenu; function cmenu() { return false; } </script>
 	<script src="https://kit.fontawesome.com/b78c34bd2b.js" crossorigin="anonymous"></script>
