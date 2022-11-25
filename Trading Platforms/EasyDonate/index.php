@@ -2,6 +2,10 @@
 
 require './config.php';
 
+if($_GET["url"]){
+  header("Location: " . $_GET["url"] . "");
+}
+
 $products = curl_init('https://easydonate.ru/api/v3/shop/products');
 curl_setopt($products, CURLOPT_HTTPHEADER, array('Shop-Key:' . $key));
 curl_setopt($products, CURLOPT_RETURNTRANSFER, true);
@@ -40,12 +44,12 @@ $sys_products = json_decode($pay, true)["response"];
 
                                     <input type="text" style="padding: 0.8rem;" name="nick" placeholder="Ник на сервере" class="form-control" required /></div><br />
 
-                                <select name="id" style="padding: 0.8rem; font-size: 0.95rem; line-height: 1.5; border-radius: 0.3rem; height: calc(1.5em + 1.75rem + 0.0625rem); background-repeat: no-repeat; background-position: center right calc(0.375em + 0.3rem); background-size: calc(0.4875rem + 0.6rem) calc(0.4875rem + 0.6rem); border-radius: 8px; display: block;" class="form-control">
+                                <select name="id" style="padding: 0.8rem; font-size: 0.95rem; line-height: 1.5; border-radius: 0.3rem; height: calc(1.5em + 1.75rem + 0.0625rem); background-repeat: no-repeat; background-position: center right calc(0.375em + 0.3rem); background-size: calc(0.4875rem + 0.6rem) calc(0.4875rem + 0.6rem); border-radius: 8px; display: block;" class="form-control" required>
 
-                                    <option disabled="" selected="">Выберите товар</option>
+                                    <option value="" disabled="" selected="" required>Выберите товар</option>
 
                                         <?php foreach($sys_products as $key => $donate): ?>
-                                            <option value="<?=$key; ?>"><?=$donate['name']; ?> <?=$donate['price']; ?>р.</option>
+                                            <option value="<?=$key; ?>" required><?=$donate['name']; ?> <?=$donate['price']; ?>р.</option>
                                         <?php endforeach; ?>
 
                                 </select>
