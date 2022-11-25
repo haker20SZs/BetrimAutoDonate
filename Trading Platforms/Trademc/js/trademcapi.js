@@ -1,6 +1,6 @@
 var TrademcAPI = {};
 (function(self){
-	var SCI_ADDRESS = 'https://shop.milord-pe.ru/pay.php',
+	var SCI_ADDRESS = './pay.php',
 		API_ADDRESS = 'https://api.trademc.org/',
 		API_VERSION = 3;
 	
