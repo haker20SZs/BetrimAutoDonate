@@ -29,9 +29,18 @@ curl_setopt($get, CURLOPT_SSL_VERIFYPEER, true);
 
 $pay = curl_exec($get); 
 curl_close($get);
-$sys_pay = json_decode($pay, true)["response"]['url'];
 
-header("Location: /?url=" . $sys_pay);
+$check = json_decode($pay, true)["response"];
+$errorurl = $website;
+
+if($check == "Сервер с ID {$serverid} не найден."){
+	header("Location: " . $errorurl);
+}elseif($check == "Сервер с ID 0 не найден."){
+	header("Location: " . $errorurl);
+}else{
+	$sys_pay = json_decode($pay, true)["response"]['url'];
+	header("Location: " . $sys_pay);
+}
 
 }else{
 	header("Location: " . $website);
