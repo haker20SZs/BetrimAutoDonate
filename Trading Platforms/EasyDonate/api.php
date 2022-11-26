@@ -31,7 +31,7 @@ $pay = curl_exec($get);
 curl_close($get);
 
 $check = json_decode($pay, true)["response"];
-$errorurl = $website;
+$errorurl = $urlweb;
 
 if($check == "Сервер с ID {$serverid} не найден."){
 	header("Location: " . $errorurl);
@@ -43,7 +43,7 @@ if($check == "Сервер с ID {$serverid} не найден."){
 }
 
 }else{
-	header("Location: " . $website);
+	header("Location: " . $urlweb);
 }
 
 ?>
