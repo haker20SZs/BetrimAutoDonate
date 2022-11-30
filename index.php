@@ -30,34 +30,33 @@ include "./config/post.php";
 						<p class="shop-description text-muted"><br>Все средства направлены<br>На развитие проекта</p>
                         <div class="row align-items-center">
                             <div class="col-lg-6 order-lg-1">
-	<form method="POST" action="" class="form-pay"><div>
-			<input type="text" style="padding: 0.8rem;" name="nikname" placeholder="Ник на сервере" class="form-control" required /></div><br />
+                        <form method="POST" action="" class="form-pay"><div>
+                            <input type="text" style="padding: 0.8rem;" name="nikname" placeholder="Ник на сервере" class="form-control" required /></div><br/>
+                        <select name="form" style="padding: 0.8rem; font-size: 0.95rem; line-height: 1.5; border-radius: 0.3rem; height: calc(1.5em + 1.75rem + 0.0625rem); background-repeat: no-repeat; background-position: center right calc(0.375em + 0.3rem); background-size: calc(0.4875rem + 0.6rem) calc(0.4875rem + 0.6rem); border-radius: 8px; display: block;" class="form-control">
 
-                <select name="form" style="padding: 0.8rem; font-size: 0.95rem; line-height: 1.5; border-radius: 0.3rem; height: calc(1.5em + 1.75rem + 0.0625rem); background-repeat: no-repeat; background-position: center right calc(0.375em + 0.3rem); background-size: calc(0.4875rem + 0.6rem) calc(0.4875rem + 0.6rem); border-radius: 8px; display: block;" class="form-control">
+                            <option disabled="" selected="">Выберите товар</option>
 
-                    <option disabled="" selected="">Выберите товар</option>
+                            <optgroup selected="" label="Выберите донат">
+                                <?php foreach($config['groups'] as $key => $donate): ?>
+                                    <option value="<?=$key; ?>"><?=$donate['name']; ?> <?=$donate['price']; ?>р.</option>
+                                <?php endforeach; ?>
+                            </optgroup>
 
-                    <optgroup selected="" label="Выберите донат">
-                        <?php foreach($config['groups'] as $key => $donate): ?>
-                            <option value="<?=$key; ?>"><?=$donate['name']; ?> <?=$donate['price']; ?>р.</option>
-                        <?php endforeach; ?>
-                    </optgroup>
+                            <optgroup selected="" label="Выберите кейс">
+                                <?php foreach($config['cases'] as $key => $case): ?>
+                                    <option value="<?=$key; ?>"><?=$case['name']; ?> <?=$case['price']; ?>р.</option>
+                                <?php endforeach; ?>
+                            </optgroup>
 
-                    <optgroup selected="" label="Выберите кейс">
-                        <?php foreach($config['cases'] as $key => $case): ?>
-                            <option value="<?=$key; ?>"><?=$case['name']; ?> <?=$case['price']; ?>р.</option>
-                        <?php endforeach; ?>
-                    </optgroup>
+                            <optgroup selected="" label="Выберите сумму">
+                                <?php foreach($config['moneys'] as $key => $money) : ?>
+                                    <option value="<?=$key; ?>"><?=$money['name']; ?> <?=$money['price']; ?>р.</option>
+                                <?php endforeach; ?>
+                            </optgroup>
 
-                    <optgroup selected="" label="Выберите сумму">
-                        <?php foreach($config['moneys'] as $key => $money) : ?>
-                            <option value="<?=$key; ?>"><?=$money['name']; ?> <?=$money['price']; ?>р.</option>
-                        <?php endforeach; ?>
-                    </optgroup>
+                        </select>
 
-                </select>
-
-            <div>
+                    <div>
 			<br>
 			<?php
 			
@@ -72,7 +71,9 @@ include "./config/post.php";
 		<br>
 	</form>
 		
-		<button style="border-radius: 8px; background-color: #00bfff; font-weight: bold; height: 55px; font-size: 20px;" class="trademc-buyform-button" type="submit" class="btn btn-success" name="buy" />Оплатить</button></div>
+		<button style="border-radius: 8px; background-color: #00bfff; font-weight: bold; height: 55px; font-size: 20px;" class="trademc-buyform-button" type="submit" class="btn btn-success" name="buy" />Оплатить</button>
+
+    </div>
 							<div id="trademc-buyform"></div></div>
                         </div>
                     </div>
