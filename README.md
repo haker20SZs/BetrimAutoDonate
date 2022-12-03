@@ -37,8 +37,5 @@ BetrimAutoDonate - Скрипт авто доната для ваших серв
 Поддержка автора:                                                                                   
  Qiwi - ZLOGER2077                                                                                                                                   
 
-Мой вк:                                                                                                     
- Vk - @tiktoker_ru
-  
 Мой собственный проект:                                           
  MilordPE - @milordpe                                              
